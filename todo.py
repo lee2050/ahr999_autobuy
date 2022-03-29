@@ -22,7 +22,7 @@ def sendsms(_symbol):
     user = '******'
     password = md5('******')
     content = '【**软件】报价提醒' + _symbol
-    phone = '13660642766'
+    phone = '136*********'
     data__ = urllib.parse.urlencode({'u': user, 'p': password, 'm': phone, 'c': content})
     send_url = smsapi + 'sms?' + data__
     urllib.request.urlopen(send_url)
