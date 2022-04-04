@@ -213,7 +213,8 @@ def place_order(_symbol, _quantity, _price):
 
 
 # 获取ahr999
-ahr999_index = float(return_ahr999())
+response = requests.get('http://43.129.241.254:5000/info/')
+ahr999_index = float(response.json()['ahr999'])
 
 # 定义交易所API
 apiKey = 'M19SmfF***********************'
@@ -241,9 +242,9 @@ db_path = '/mnt/binance_swap/trade_data.db'
 
 # exit()
 
-# 配置每次定投金额和币种 BTC、ETH、BNB、AR、UNI、DOGE
+# 配置每次定投金额和币种 BTC、ETH
 buy_amount = 100  # USDT的数量
-buy_symbol = ['BTC', 'ETH', 'AR', 'UNI', 'DOGE', 'BNB']  # 定投币种
+buy_symbol = ['BTC', 'ETH']  # 定投币种
 
 symbol_s = ''
 for x in buy_symbol:
